@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "player-image": "https://i.ibb.co.com/kkLqbm4/shakib-al-hasan.webp",
+    "player-name": "Shakib Al Hasan",
+    "player-country": "Bangladesh",
+    "playing-role": "All-rounder",
+    "rating": 9.5,
+    "bating-style": "Left-handed",
+    "bowling-style": "Left-arm orthodox",
+    "price": "$200,000"
+  },
+  {
+    "id": 2,
+    "player-image": "https://i.ibb.co.com/mFrXvPwn/download.jpg",
+    "player-name": "Tamim Iqbal",
+    "player-country": "Bangladesh",
+    "playing-role": "Batsman",
+    "rating": 8.8,
+    "bating-style": "Left-handed",
+    "bowling-style": "N/A",
+    "price": "$180,000"
+  },
+  {
+    "id": 3,
+    "player-image": "https://example.com/players/mushfiqur-rahim.jpg",
+    "player-name": "Mushfiqur Rahim",
+    "player-country": "Bangladesh",
+    "playing-role": "Wicketkeeper-Batsman",
+    "rating": 8.7,
+    "bating-style": "Right-handed",
+    "bowling-style": "N/A",
+    "price": "$170,000"
+  },
+  {
+    "id": 4,
+    "player-image": "https://example.com/players/mustafizur-rahman.jpg",
+    "player-name": "Mustafizur Rahman",
+    "player-country": "Bangladesh",
+    "playing-role": "Bowler",
+    "rating": 8.9,
+    "bating-style": "Left-handed",
+    "bowling-style": "Left-arm fast-medium",
+    "price": "$190,000"
+  },
+  {
+    "id": 5,
+    "player-image": "https://example.com/players/andre-russell.jpg",
+    "player-name": "Andre Russell",
+    "player-country": "West Indies",
+    "playing-role": "All-rounder",
+    "rating": 9.4,
+    "bating-style": "Right-handed",
+    "bowling-style": "Right-arm fast",
+    "price": "$210,000"
+  },
+  {
+    "id": 6,
+    "player-image": "https://example.com/players/david-warner.jpg",
+    "player-name": "David Warner",
+    "player-country": "Australia",
+    "playing-role": "Batsman",
+    "rating": 9.2,
+    "bating-style": "Left-handed",
+    "bowling-style": "Right-arm leg break",
+    "price": "$200,000"
+  }
+]
