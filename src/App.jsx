@@ -81,7 +81,6 @@ const App = () => {
           )}
         </div>
       </main>
-      
       <Newsletter />
       <Footer />
       <ToastContainer position="bottom-right" />
