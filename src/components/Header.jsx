@@ -9,7 +9,7 @@ const Header = ({ availableCoins }) => {
     <header className="w-full h-20 flex items-center justify-between px-4 sm:px-8">
       <div className="max-w-[1200px] w-full mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <img src="assets/logo.png" alt="Cricket Logo" className="h-12 w-12 object-contain" />
+          <img src="/src/assets/logo.png" alt="Cricket Logo" className="h-12 w-12 object-contain" />
         </div>
         <div className="flex items-center space-x-4 sm:space-x-6">
           <nav className="hidden md:flex items-center space-x-4 sm:space-x-6">

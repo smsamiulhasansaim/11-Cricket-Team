@@ -1,26 +1,20 @@
 import React from 'react';
 
-// TeamSummary component that displays team statistics and budget information
 const TeamSummary = ({ selectedPlayers }) => {
   
-  // Calculate total number of selected players
   const totalPlayers = selectedPlayers.length;
   
-  // Calculate total budget spent on selected players
   const totalSpent = selectedPlayers.reduce((sum, player) => {
     const price = parseFloat(player.price.replace(/[$,]/g, ''));
     return sum + price;
   }, 0);
   
-  // Calculate remaining budget (15,000,000 - total spent)
   const remainingBudget = 15000000 - totalSpent;
-  
-  // Calculate average rating of selected players
+
   const averageRating = selectedPlayers.length > 0 
     ? (selectedPlayers.reduce((sum, player) => sum + player.rating, 0) / selectedPlayers.length).toFixed(1)
     : 0;
 
-  // Function to format currency with commas
   const formatCurrency = (amount) => {
     return '$' + amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
@@ -28,8 +22,7 @@ const TeamSummary = ({ selectedPlayers }) => {
   return (
     <div className="max-w-md mx-auto mt-8 sm:mt-12 lg:mt-16 bg-white rounded-lg shadow-lg p-6">
       <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Team Summary</h3>
-      
-      {/* Team statistics grid */}
+
       <div className="grid grid-cols-2 gap-4 mb-4">
         <div className="bg-gray-50 p-3 rounded-lg text-center">
           <div className="text-2xl font-bold text-gray-800">{totalPlayers}/11</div>
@@ -40,8 +33,6 @@ const TeamSummary = ({ selectedPlayers }) => {
           <div className="text-sm text-gray-600">Average Rating</div>
         </div>
       </div>
-      
-      {/* Budget information */}
       <div className="space-y-3">
         <div className="flex justify-between items-center">
           <span className="text-gray-600">Total Budget:</span>
@@ -61,7 +52,6 @@ const TeamSummary = ({ selectedPlayers }) => {
         </div>
       </div>
       
-      {/* Budget warning message */}
       {remainingBudget < 500000 && remainingBudget > 0 && (
         <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
           <p className="text-sm text-yellow-800 text-center">
@@ -69,8 +59,6 @@ const TeamSummary = ({ selectedPlayers }) => {
           </p>
         </div>
       )}
-      
-      {/* No budget left warning */}
       {remainingBudget <= 0 && (
         <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
           <p className="text-sm text-red-800 text-center">
@@ -79,7 +67,6 @@ const TeamSummary = ({ selectedPlayers }) => {
         </div>
       )}
       
-      {/* Team completion message */}
       {totalPlayers === 11 && (
         <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
           <p className="text-sm text-green-800 text-center font-semibold">

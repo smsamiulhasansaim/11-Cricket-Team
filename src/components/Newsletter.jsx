@@ -6,7 +6,7 @@ const Newsletter = () => {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <div className="relative rounded-2xl overflow-hidden h-[280px] sm:h-[300px] lg:h-[320px]">
           <div className="absolute inset-0">
-            <img src="assets/bg-shadow.png" alt="Newsletter Background" className="w-full h-full object-cover" />
+            <img src="src/assets/bg-shadow.png" alt="Newsletter Background" className="w-full h-full object-cover" />
           </div>
 
           <div className="absolute inset-0 bg-black/10"></div>
