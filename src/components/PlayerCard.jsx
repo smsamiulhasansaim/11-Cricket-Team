@@ -1,6 +1,7 @@
 import React from 'react';
 
-const PlayerCard = ({ player, onSelectPlayer, isSelectedView = false, onRemovePlayer }) => {
+const PlayerCard = ({ player, onSelectPlayer, isSelectedView = false, onRemovePlayer, availableCoins }) => {
+  
   const getInitials = (name) => {
     return name.split(' ').map(word => word[0]).join('').toUpperCase();
   };
@@ -15,6 +16,15 @@ const PlayerCard = ({ player, onSelectPlayer, isSelectedView = false, onRemovePl
       "from-orange-400 to-red-500"
     ];
     return gradients[index % gradients.length];
+  };
+
+  const calculatePlayerPrice = (priceString) => {
+    return parseFloat(priceString.replace(/[$,]/g, ''));
+  };
+
+  const canAffordPlayer = () => {
+    const playerPrice = calculatePlayerPrice(player.price);
+    return availableCoins >= playerPrice;
   };
 
   if (isSelectedView) {
@@ -55,17 +65,17 @@ const PlayerCard = ({ player, onSelectPlayer, isSelectedView = false, onRemovePl
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6">
+    <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300">
       <div className="mb-4 rounded-lg overflow-hidden">
         <img src={player["player-image"]} alt={player["player-name"]} className="w-full h-48 object-cover" />
       </div>
+      
       <div className="flex items-center space-x-2 text-gray-700 mb-2">
-        <i className="fas fa-user-circle text-lg text-gray-500"></i>
         <span className="font-bold text-sm sm:text-base">{player["player-name"]}</span>
       </div>
+      
       <div className="flex items-center justify-between text-gray-500 text-xs sm:text-sm mb-4">
         <div className="flex items-center space-x-1">
-          <i className="fas fa-flag text-xs"></i>
           <span>{player["player-country"]}</span>
         </div>
         <span className="bg-gray-200 text-xs font-semibold px-2 py-1 rounded-full">{player["playing-role"]}</span>
@@ -85,9 +95,14 @@ const PlayerCard = ({ player, onSelectPlayer, isSelectedView = false, onRemovePl
         <span className="text-gray-500 text-sm">Price: <span className="text-gray-800 font-bold">{player.price}</span></span>
         <button 
           onClick={() => onSelectPlayer(player)}
-          className="border border-gray-300 rounded-full py-2 px-3 sm:px-4 font-semibold text-gray-800 hover:bg-gray-100 transition duration-200 text-xs sm:text-sm"
+          disabled={!canAffordPlayer()}
+          className={`border rounded-full py-2 px-4 font-semibold transition duration-200 text-sm ${
+            canAffordPlayer() 
+              ? 'border-gray-300 text-gray-800 hover:bg-gray-100' 
+              : 'border-gray-200 text-gray-400 cursor-not-allowed'
+          }`}
         >
-          Choose Player
+          {canAffordPlayer() ? 'Select Player' : 'Need Coins'}
         </button>
       </div>
     </div>

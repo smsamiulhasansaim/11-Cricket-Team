@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <div className="flex justify-center mb-8 sm:mb-12">
           <div className="text-center">
-            <img src="assets/logo-footer.png" alt="Cricket Logo" className="mx-auto mb-2 w-12 h-12 sm:w-16 sm:h-16" />
+            <img src="/src/assets/logo-footer.png" alt="Cricket Logo" className="mx-auto mb-2 w-12 h-12 sm:w-16 sm:h-16" />
           </div>
         </div>
 

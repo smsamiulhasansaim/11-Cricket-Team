@@ -6,7 +6,7 @@ const HeroBanner = () => {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-8">
         <div className="bg-gray-900 rounded-lg shadow-lg overflow-hidden background-image-container" style={{minHeight: '400px'}}>
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center p-6 sm:p-8">
-            <img src="assets/banner-main.png" alt="Cricket Logo" className="mb-6 sm:mb-8 w-auto h-14 sm:h-20 md:h-24 lg:h-28" />
+            <img src="src/assets/banner-main.png" alt="Cricket Logo" className="mb-6 sm:mb-8 w-auto h-14 sm:h-20 md:h-24 lg:h-28" />
             <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               Assemble Your Ultimate Dream 11 Cricket Team
             </h1>
