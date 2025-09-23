@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+/* Custom glowing border animation for selected players */
 @keyframes glowing-border {
   0% { box-shadow: 0 0 5px #fde047; }
   50% { box-shadow: 0 0 20px #fde047; }
@@ -11,17 +12,26 @@
   animation: glowing-border 2s infinite ease-in-out;
 }
 
+/* Gradient for subscribe buttons */
 .subscribe-button-gradient {
   background-image: linear-gradient(to right, #f87171, #facc15);
 }
 
+/* Gradient for main action buttons */
 .gradient-button {
   background-image: linear-gradient(to right, #f87171, #facc15);
 }
 
+/* Background image styling for hero sections */
 .background-image-container {
   background-image: url('assets/bg-shadow.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* Custom styles for disabled buttons */
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
 }

@@ -1,22 +1,33 @@
 import React from 'react';
 
-const Header = () => {
+// Header component that displays logo, navigation, and coin balance
+const Header = ({ availableCoins }) => {
+  // Function to format coin number with commas (e.g., 15,000,000)
+  const formatCoins = (coins) => {
+    return coins.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+
   return (
     <header className="w-full h-20 flex items-center justify-between px-4 sm:px-8">
       <div className="max-w-[1200px] w-full mx-auto flex items-center justify-between">
+        {/* Logo section */}
         <div className="flex items-center space-x-2">
           <img src="assets/logo.png" alt="Cricket Logo" className="h-12 w-12 object-contain" />
         </div>
 
+        {/* Navigation and coin balance section */}
         <div className="flex items-center space-x-4 sm:space-x-6">
+          {/* Main navigation menu (hidden on mobile) */}
           <nav className="hidden md:flex items-center space-x-4 sm:space-x-6">
             <a href="#" className="text-gray-800 hover:text-blue-600 transition duration-300">Home</a>
             <a href="#" className="text-gray-800 hover:text-blue-600 transition duration-300">Fixture</a>
             <a href="#" className="text-gray-800 hover:text-blue-600 transition duration-300">Teams</a>
             <a href="#" className="text-gray-800 hover:text-blue-600 transition duration-300">Schedules</a>
           </nav>
+          
+          {/* Coin balance display */}
           <button className="bg-gray-100 text-gray-800 font-semibold py-2 px-3 sm:px-4 rounded-full flex items-center space-x-2 shadow-sm hover:bg-gray-200 transition duration-300">
-            <span className="text-sm sm:text-base">0 Coin</span>
+            <span className="text-sm sm:text-base">{formatCoins(availableCoins)} Coins</span>
             <span className="text-yellow-500 text-lg sm:text-xl">🪙</span>
           </button>
         </div>
